@@ -25,10 +25,10 @@ void Reader::readObj(const char* name, Mesh* m){
 	while(!in.eof()){
 		getline(in, buffer);
 		
-		if(buffer.find('\n') != -1){
-			cout<<buffer<<endl;
+		if(buffer.empty()){
+			continue;
 		}
-	
+		
 		tokens = split(buffer, ' ', true);
 		
 		switch(buffer[0]){
@@ -142,6 +142,10 @@ bool Reader::readMtl(const char* s, Mesh* m){
 	while(!in.eof()){
 	
 		getline(in, buffer);
+		
+		if(buffer.empty()){
+			continue;
+		}
 		
 		tokens = split(buffer, ' ', true);
 		

@@ -146,6 +146,28 @@ void Mesh::render(int renderMode){
 // --------
 // --------
 
+void Mesh::renderVerts(void){
+	
+	glBegin(GL_POINTS);
+	
+	for(Vertex v : verts){
+				
+		glColor3f(1.0f, 1.0f, 0.0f);
+		
+		glVertex3fv(v.getCoords());
+	
+		// glPushMatrix();
+
+			// glTranslatef(vert[0], vert[1], vert[2]);
+
+			// glutSolidSphere(0.1, 4, 4);
+				
+		// glPopMatrix();
+	}
+	glEnd();
+}
+
+
 void Mesh::render2(int renderMode, int glMode){
 
 	glColor3f(1.0, 1.0, 1.0);
@@ -218,5 +240,9 @@ void Mesh::render2(int renderMode, int glMode){
 			}
 			
 		}
+	}
+	
+	if(glMode == GL_LINE_LOOP){
+		renderVerts();
 	}
 }

@@ -1,3 +1,4 @@
+#include <windows.h>
 #include "group.h"
 #include "vertex.h"
 #include "texts.h"
@@ -25,6 +26,7 @@ class Mesh{
 		void addMats(Material* newM);
 		void render(int renderMode);
 		void render2(int renderMode, int glMode);
+		void renderVerts(void);
 		
 
 		Group* getGroupAt(int i);

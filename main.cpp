@@ -1,4 +1,3 @@
-#include <Windows.h> 
 #include "camera.h"
 #include "reader.h"
 #include <stdio.h> 
@@ -297,6 +296,7 @@ void init() {
 	glCullFace(GL_BACK);
 	
 	glLineWidth(3);
+	glPointSize(10);
 	
 	// glutSetCursor(GLUT_CURSOR_NONE);
 
